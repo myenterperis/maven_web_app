@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>teslafe</finalName>
+		<finalName>lucid</finalName>
 		
 		<plugins>
 			<plugin>
