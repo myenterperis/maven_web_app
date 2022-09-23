@@ -6,9 +6,9 @@ stage('1clonecode'){
  stage('2test&bulid'){
     sh "${mavenHome}/bin/mvn clean package"
  }
+ /*
 stage('3codequality'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
-    /*
  }
 stage('4uploadartifacts'){
     sh "${mavenHome}/bin/mvn deploy"
