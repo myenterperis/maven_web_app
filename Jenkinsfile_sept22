@@ -1,0 +1,35 @@
+node{
+   def mavenHome = tool name:'maven3.8.6'
+stage('1clonecode'){
+   git "https://github.com/myenterperis/maven_web_app"
+ }
+ stage('2test&bulid'){
+    sh "${mavenHome}/bin/mvn clean package"
+ }
+stage('3codequality'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+    /*
+ }
+stage('4uploadartifacts'){
+    sh "${mavenHome}/bin/mvn deploy"
+}
+stage('5deploy2UAT'){
+    sh "echo 'deploy to UAT'  "
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://34.203.241.150:8080/')], contextPath: null, war: 'target/*war'
+}
+stage('6deploy2approvalGate'){
+    sh "echo 'ready for review' "
+   timeout(time: 5, unit: "DAYS") { 
+   input message: 'Application ready for deployment,please review and approve'
+  }
+}
+stage('7deploy2production'){
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://34.203.241.150:8080/')], contextPath: null, war: 'target/*war'
+}
+stage('8emailnotification'){
+    emailext body: '''HI ALL,
+chech build status
+landmarkTechnologies''', recipientProviders: [buildUser(), developers(), upstreamDevelopers(), brokenBuildSuspects(), brokenTestsSuspects(), contributor(), culprits()], subject: 'build status', to: 'musiyaya12@gmail.com'
+}
+ */
+ }
