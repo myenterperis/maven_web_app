@@ -6,7 +6,6 @@ stage('1clonecode'){
  stage('2test&bulid'){
     sh "${mavenHome}/bin/mvn clean package"
  }
- /*
 stage('3codequality'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
  }
@@ -31,5 +30,4 @@ stage('8emailnotification'){
 chech build status
 landmarkTechnologies''', recipientProviders: [buildUser(), developers(), upstreamDevelopers(), brokenBuildSuspects(), brokenTestsSuspects(), contributor(), culprits()], subject: 'build status', to: 'musiyaya12@gmail.com'
 }
- */
  }
