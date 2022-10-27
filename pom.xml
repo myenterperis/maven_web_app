@@ -96,13 +96,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.226.112.86:3000/repository/lucid-releases/</url>
+	      <url>http://54.226.245.88:3000/repository/lucid-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.226.112.86:3000/repository/lucid-snapshots/</url>
+	      <url>http://54.226.245.88:3000/repository/lucid-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
