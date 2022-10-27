@@ -1,13 +1,13 @@
 pipeline{
   agent any 
   tools{
-    maven "maven3.8.4"
+    maven "maven3.8.6"
   }
   stages{
     stage('GitClone'){
       steps{
         echo "cloning the lastest applications version"
-        git "https://github.com/LandmakTechnology/maven-web-application"
+        git "https://github.com/myenterperis/maven_web_app"
       }
     }
       stage('Test+Build'){
