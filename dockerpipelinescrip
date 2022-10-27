@@ -2,12 +2,12 @@ Jenkinsfile:
 pipeline{
   agent any
   tools{
-    maven "maven_home"
+    maven "maven3.8.6"
   }
   stages{
     stage('GitClone'){
       steps{
-        git "https://github.com/JoyOrji1/visa-app.git"
+        git clone "https://github.com/myenterperis/maven_web_app/"
       }
     }
     stage('Test&Build'){
@@ -32,8 +32,8 @@ pipeline{
     }
     stage('predeployment'){
       steps{
-        sh "docker build -t joyorji/ebay-app ."  
-        sh "docker push joyorji/ebay-app"  
+        sh "docker build -t myenterperis/maven_web_app ."  
+        sh "docker push myenterperis/maven_web_app"  
       }
     }
     stage('Undeployment'){
@@ -45,7 +45,7 @@ pipeline{
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
-        sh "docker run --name myapp -d -p 2000:8080 joyorji/ebay-app"
+        sh "docker run --name myapp -d -p 2000:8080 myenterperis/maven_web_app"
       }
     }
 
