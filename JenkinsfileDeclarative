@@ -2,8 +2,7 @@ pipeline{
 
 agent any
 
-tools
-{
+tools{
   maven 'maven3.6.3'
 
 }
@@ -19,36 +18,31 @@ options{
 
  stages{
    
-   stage('CheckoutCode')
-   {
+   stage('CheckoutCode'){
      steps{
 	 git branch: 'development', credentialsId: '8e348aa2-9531-4dbe-863d-1adb64897470', url: 'https://github.com/LandmakTechnology/maven-web-application.git'
 	 }
    }
    
-   stage('Build')
-   {
+   stage('Build'){
     steps{
 	  sh "mvn clean package"
 	 }
    }
    
-    stage('ExecuteSonarQubeReport')
-   {
+    stage('ExecuteSonarQubeReport'){
      steps{
 	  sh "mvn sonar:sonar"
 	 }
    }
    
-   stage('UploadArtifactintoNexus')
-   {
+   stage('UploadArtifactintoNexus'){
      steps{
 	  sh "mvn deploy"
 	 }
    }
    
-  stage('DeployAppIntoTomcat')
- {
+  stage('DeployAppIntoTomcat'){
    steps{
   sshagent(['2b7b0c6a-5eff-4f4a-82c3-3630f91c70b5']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.1.222.74:/opt/apache-tomcat-9.0.41/webapps/"
