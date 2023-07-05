@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">WELCOME TO LANDMARK TECHNOLOGIES.</h1>
+<h1 align="center">WELCOME TO ENTERPRISE TECHNOLOGIES.</h1>
 <h2 align="center">We are developing and supporting quality Software Solutions to millions of clients.
 	           We are raising over 1m millionaires by 2030.GOD IS GOOD
 	We offer  Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h2>
